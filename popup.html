@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Sorter</title>
+    <style>
+      body {
+        width: 400px;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        background-color: #f9f9f9;
+        cursor: move;
+      }
+      li:hover {
+        background-color: #f0f0f0;
+      }
+      li.dragging {
+        opacity: 0.5;
+      }
+      .favicon {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      .tab-title {
+        display: inline-block;
+        max-width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+      }
+      #saveButton {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #saveButton:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Sort Tabs</h1>
+      <ul id="tabList"></ul>
+      <button id="saveButton">Save Order</button>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
