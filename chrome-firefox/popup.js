@@ -45,12 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function createTabElement(tab, index) {
     const li = document.createElement('li')
-    li.innerHTML = `
-      <img class="favicon" src="${
-        tab.favIconUrl || 'favicon.ico'
-      }" alt="Favicon">
-      <span class="tab-title">${tab.title}</span>
-    `
+
+    // Create the image element
+    const img = document.createElement('img')
+    img.className = 'favicon'
+    img.src = tab.favIconUrl || 'favicon.ico'
+    img.alt = 'Favicon'
+
+    // Create the span for the title
+    const span = document.createElement('span')
+    span.className = 'tab-title'
+    span.textContent = tab.title
+
+    // Clear any existing content and append the new elements
+    li.textContent = ''
+    li.appendChild(img)
+    li.appendChild(span)
+
     li.draggable = true
     li.setAttribute('data-id', tab.id)
     li.setAttribute('data-index', index)
